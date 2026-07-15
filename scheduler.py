@@ -37,12 +37,13 @@ def start_health_check_server():
     logger.info(f"Starting health check HTTP server on port {port}...")
     server.serve_forever()
 
-def run_loop():
+def run_loop(start_web_server: bool = True):
     logger.info("Starting Ads Analytics Sync Scheduler Daemon...")
     
-    # Start health check server in a background thread
-    health_thread = threading.Thread(target=start_health_check_server, daemon=True)
-    health_thread.start()
+    if start_web_server:
+        # Start health check server in a background thread
+        health_thread = threading.Thread(target=start_health_check_server, daemon=True)
+        health_thread.start()
     
     while True:
         logger.info("Triggering scheduled sync job...")
@@ -59,5 +60,6 @@ def run_loop():
         time.sleep(86400)
 
 if __name__ == "__main__":
-    run_loop()
+    run_loop(start_web_server=True)
+
 

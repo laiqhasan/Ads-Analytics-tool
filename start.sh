@@ -7,6 +7,6 @@ echo "Running Alembic database migrations..."
 alembic upgrade head
 echo "Database migrations successfully applied."
 
-echo "=== SCHEDULER DAEMON ==="
-echo "Starting scheduled daily sync daemon..."
-exec python scheduler.py
+echo "=== STREAMLIT WEB APP ==="
+echo "Starting Streamlit dashboard on port $PORT..."
+exec streamlit run app.py --server.port $PORT --server.address 0.0.0.0
