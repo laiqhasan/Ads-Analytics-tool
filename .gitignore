@@ -1,0 +1,13 @@
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# Local secrets & credentials
+.env
+
+# Local database
+ads_analytics.db
+
+# OS specific files
+.DS_Store
