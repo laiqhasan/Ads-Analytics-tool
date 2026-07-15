@@ -164,8 +164,8 @@ if page == "Overview Dashboard":
             
             fig.update_layout(
                 title="Daily Spend vs. Conversions Trend",
-                yaxis=dict(title="Spend ($)", titlefont=dict(color="#4F46E5"), tickfont=dict(color="#4F46E5")),
-                yaxis2=dict(title="Conversions", titlefont=dict(color="#10B981"), tickfont=dict(color="#10B981"), anchor="x", overlaying="y", side="right"),
+                yaxis=dict(title=dict(text="Spend ($)", font=dict(color="#4F46E5")), tickfont=dict(color="#4F46E5")),
+                yaxis2=dict(title=dict(text="Conversions", font=dict(color="#10B981")), tickfont=dict(color="#10B981"), anchor="x", overlaying="y", side="right"),
                 legend=dict(x=0.01, y=0.99),
                 hovermode="x unified",
                 template="plotly_dark"
